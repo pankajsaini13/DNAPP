@@ -51,9 +51,9 @@ var app = {
         alert('scanning');
         try {
             var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-			alert(scanner);
+			
             scanner.scan( function (result) { 
-				
+				alert(result);
                 alert("We got a barcode\n" + 
                 "Result: " + result.text + "\n" + 
                 "Format: " + result.format + "\n" + 
@@ -74,6 +74,8 @@ var app = {
             }, function (error) { 
                 console.log("Scanning failed: ", error); 
             } );
+			alert(scanner);
+			
         } catch (ex) {
             console.log("error: " + 	ex.message);
         }
