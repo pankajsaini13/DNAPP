@@ -58,26 +58,14 @@ var app = {
                 "Result: " + result.text + "\n" + 
                 "Format: " + result.format + "\n" + 
                 "Cancelled: " + result.cancelled);  
-
-               console.log("Scanner result: \n" +
-                    "text: " + result.text + "\n" +
-                    "format: " + result.format + "\n" +
-                    "cancelled: " + result.cancelled + "\n");
                 document.getElementById("info").innerHTML = "text:: " + result.text;
-                console.log("log:: " + result.text);
-                /*
-                if (args.format == "QR_CODE") {
-                    window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
-                }
-                */
-
             }, function (error) { 
-                console.log("Scanning failed: ", error); 
+               alert("Scanning failed: ", error); 
             } );
 			alert(scanner);
 			
         } catch (ex) {
-            console.log("error: " + 	ex.message);
+            alert("error: " + 	ex.message);
         }
     }
 
